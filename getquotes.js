@@ -53,9 +53,9 @@ function getQuote(){
 $(document).ready(function(){
   var options = {
 
-  url: "companies.json",
+  url: "https://raw.githubusercontent.com/misspia/Stock-Watch/master/companies.json",
 
-  getValue: "Name",
+  getValue: "Symbol",
 
   list: {
     match: {
