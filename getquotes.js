@@ -41,7 +41,6 @@ function StockPriceTicker(CNames, refresh) {
         });
 
         $("#dvStockTicker").html(StockTickerHTML);
-        /*$("#dvStockTicker").jStockTicker({interval: 30, speed: 1});*/
     });
 }
 
@@ -79,5 +78,3 @@ $(document).ready(function(){
 //http://stackoverflow.com/questions/14795726/getting-data-from-yahoo-finance
 //https://play.google.com/store/apps/details?id=com.teletrader.android
 
-
-//https://jqueryui.com/autocomplete/

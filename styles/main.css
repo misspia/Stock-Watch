@@ -44,7 +44,7 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 19.4em;
+  width: 19.6em;
   margin-bottom: 5%; }
   .input-field input {
     width: 15em;
@@ -57,14 +57,27 @@
     width: 5em;
     height: 5.4em;
     text-align: center;
-    position: relative;
-    top: 2px;
-    margin-left: 0.2em; }
+    position: absolute;
+    top: 0px;
+    transform: translateX(21.5em); }
     .input-field .input-button i {
       font-size: 2em; }
     .input-field .input-button:hover, .input-field .input-button:active {
       background-color: #33C3F0;
       border-color: #33C3F0;
       color: white; }
+
+.easy-autocomplete-container ul {
+  padding: 1%;
+  list-style-type: none;
+  padding-left: 3%;
+  width: 13.7em;
+  position: absolute;
+  /*border:solid 1px grey; border-top:none;*/
+  background-color: white;
+  transform: translateY(-15px); }
+  .easy-autocomplete-container ul li {
+    width: 95%;
+    border-bottom: dashed 1px lightgray; }
 
 /*# sourceMappingURL=main.css.map */
