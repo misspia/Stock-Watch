@@ -32,8 +32,10 @@ function StockPriceTicker(CNames) {
             StockTickerHTML = StockTickerHTML + parseFloat( Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%)</span></div></div></div></div>";
 
 
-             $("#watchtable").find('tbody');
-            $("tbody").append("<tr><td>"+ Symbol +"</td><td>" + CompName + "</td><td>" + Price + "</td></td><td>" + "<span class='" + PriceIcon + "'></span>" + parseFloat(Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%</td></tr>");
+             if ($("#watchtable").find('tbody #'+Symbol).length) {
+               $("tbody #"+Symbol).html("<td>"+ Symbol +"</td><td>" + CompName + "</td><td>" + Price + "</td></td><td>" + "<span class='" + PriceIcon + "'></span>" + parseFloat(Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%</td>");
+             }
+            else $("tbody").append("<tr id=" + Symbol +"><td>"+ Symbol +"</td><td>" + CompName + "</td><td>" + Price + "</td></td><td>" + "<span class='" + PriceIcon + "'></span>" + parseFloat(Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%</td></tr>");
         });
 
         $("#dvStockTicker").html(StockTickerHTML);
@@ -44,29 +46,30 @@ function StockPriceTicker(CNames) {
 /*---------------------------------------------------------------------
             Submit Input
 -----------------------------------------------------------------------*/
+var CNAMES = "";
 function getQuote(){
   var symbol = $("#symbol").val().toUpperCase();
   if (symbol === "") return;
   StockPriceTicker(symbol);
-  //var CNames = "^FTSE,MSFT,MSFT.SW,MSFT.MX,MSFT34.SA,MSFT.BA";
+  CNAMES += (CNAMES === "") ? symbol: "," + symbol;
 }
 $(document).ready(function(){
-  var options = {
+    var options = {
+      url: "https://raw.githubusercontent.com/misspia/Stock-Watch/master/companies.json",
+      getValue: "Symbol",
+      list: {
+        match: {
+          enabled: true
+        }
+      },
+      theme: "square"
+    };
+    $("#symbol").easyAutocomplete(options);
 
-  url: "https://raw.githubusercontent.com/misspia/Stock-Watch/master/companies.json",
-
-  getValue: "Symbol",
-
-  list: {
-    match: {
-      enabled: true
-    }
-  },
-
-  theme: "square"
-};
-
-  $("#symbol").easyAutocomplete(options);
+    setInterval(function(){
+      if (CNAMES === "") return;
+      StockPriceTicker(CNAMES);
+    }, 3000);
 });
 
 
