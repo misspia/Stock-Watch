@@ -1,6 +1,16 @@
 [
-    {"Symbol":"APPL"},
+    {"Symbol":"AAPL"},
     {"Symbol":"CAT"},
+    {"Symbol":"AXP"},
+    {"Symbol":"BAC"},
+    {"Symbol":"SLF"},
+    {"Symbol":"MFC"},
+    {"Symbol":"GIB"},
+    {"Symbol":"BNS.TO"},
+    {"Symbol":"^HSI"},
+    {"Symbol":"^GSPTSE"},
+    {"Symbol":"MG.TO"},
+    
   {
     "Symbol": "TFSC",
     "Name": "1347 Capital Corp.",
