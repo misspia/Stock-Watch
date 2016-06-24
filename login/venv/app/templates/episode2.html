@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Stock Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="styles/base.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div id="Sign-In"> <fieldset style="width:30%"><legend>Enter Python to execute</legend> 
+    <form action = "/" method = "post"> 
+        <input type = "text" name = "expression"/>
+        <input type = "submit" value = "execute"/>
+    </form> </fieldset> </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            Results:
+            <pre>
+                {% for message in messages %}
+{{message}}
+               {% endfor %}
+            </pre>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.js"></script>
+<script src="getquotes.js"></script>
