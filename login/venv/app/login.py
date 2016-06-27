@@ -1,7 +1,16 @@
 import flask, flask.views
 import os
 import functools
+from flask_sqlalchemy import SQLAlchemy
 app = flask.Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://scott:tiger@localhost/mydatabase'
+db = SQLAlchemy(app)
+
+class usersdb(db.Model):
+        __tablename__= 'userstable'
+        id= db.Column('id', db.Integer, primary_key=True)
+        data= db.Column('data', db.Unicode)
+
 # Don't do this!
 app.secret_key = "bacon"
 

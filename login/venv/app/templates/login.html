@@ -7,10 +7,14 @@
         </div>
     </div>
     {% if 'username' in session %}
-        <p>Welcome back {{session['username']}}!</p>
-        <form action="{{url_for('login')}}" method="post">
-            <input type="submit" name="logout" value="logout" />
-        </form>
+        
+        <center class="logout">
+            <form action="{{url_for('login')}}" method="post">
+                <input type="submit" name="logout" value="logout" />
+            </form> 
+          <!--<p>Welcome back {{session['username']}}!</p> --> 
+        </center>
+        
         
     <div class="container">
     <div class="row">
@@ -45,13 +49,6 @@
     </tr>
   </thead>
   <tbody>
-    <!--
-    <tr>
-      <td>sym</td>
-      <td>name</td>
-      <td>$</td>
-      <td>+/-</td>
-    </tr> -->
   </tbody>
 </table>
 
@@ -59,14 +56,17 @@
     </div>
 </div>
     {% else %}
-        <p>A login is required:</p>
+       <center class="login">
+          <p>A login is required</p>
         <form action="{{url_for('login')}}" method="post">
-            <p>Username: <br/>
-            <input type="text" name="username"/></p>
-            <p>Password:<br/>
-            <input type="password" name="passwd"/></p>
+            <label>Username</label>
+            <input type="text" name="username"/>
+            <label>Password</label>
+            <input type="password" name="passwd"/>
             <p><input type="submit" value ="submit"/></p>
-        </form>
+        </form>   
+       </center>
+        
     {% endif %}
     {% with messages = get_flashed_messages() %}
         {% for message in messages%}
