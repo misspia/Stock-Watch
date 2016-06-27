@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+$mainfont: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$bgcolor: white;
+$themecolor-high:#33C3F0;
+$themecolor-low:#33C3F0;
+$textcolor: grey;
+@mixin center-hor (){
+    position:relative;
+    margin-left: auto; margin-right: auto;
+}
+
+.header{
+    background-color: $themecolor-low;
+    color: $bgcolor;
+    font-weight:800;
+    font-size: 3em;
+    padding:1% 3%;
+    margin-bottom: 5%;
+    text-align: center;
+    i{
+        margin-right:1%;
+    }
+}
+
+.container{
+    border:none;
+}
+#StockTickerContainer{
+    height:7em;  
+    line-height: 28px; 
+     background-color: $bgcolor;
+    margin-bottom:4%;
+    
+}
+.company-view{
+    color: $textcolor;
+    font-size: 1.5em; font-weight: 800;
+    text-align: right;
+    span{
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+}
+.allprice-view{
+    text-align: left;
+    
+    .price-view{
+        font-size: 4em; 
+    }
+    .allpchange-view{
+        line-height:3.8em;
+        font-size: 1em;
+    }
+    
+}
+
+#dvStockTicker{
+   font-family: $mainfont;
+    text-align: center;
+    
+}
+.input-field{
+    @include center-hor();
+    width:19.6em;
+    margin-bottom: 5%;
+    
+    input{
+        width:15em;
+        height:4em;
+        color: $textcolor;
+        font-size: 1em;
+        padding-left: 1.5em;
+    }
+
+    .input-button{
+        padding:0;
+        width:5em; height: 5.4em;
+        text-align: center;
+        position:absolute; top:0px;
+        transform: translateX(21.5em);
+        i{
+            font-size:2em;
+        }
+    
+        &:hover, &:active{
+            background-color:$themecolor-high;
+            border-color: $themecolor-high;
+            color:white;
+        }
+}
+}
+.easy-autocomplete-container ul{
+        
+        padding:1%;
+        list-style-type: none;
+        padding-left: 3%; width:13.7em;
+        position:absolute;
+    /*border:solid 1px grey; border-top:none;*/
+        
+        background-color: white;
+        transform: translateY(-15px);
+    li{
+        width:95%;
+        border-bottom: dashed 1px lightgray;
+    }
+    }
+
+    
+    
+
+#watchtable{
+
+}
+
+.login{
+    
+}
+
+.logout{
+    transform: translateY(-1em);
+    text-align: center !important;
+    input{
+        border-radius: 50%;
+        height:10.5em; 
+        margin:0;
+        
+    }
+    p{
+        transform: translateY(-1em);
+    }
+}
